@@ -1,5 +1,5 @@
 # GANSER - Official PyTorch Implementation
-#### [Project Page](https://github.com/tczhangzhi/PyTorch-GANSER) | [Paper]() | [Download](https://pan.baidu.com/s/1olReEiHvWNz-F_wQyYnnWA)
+#### [Project Page](https://github.com/tczhangzhi/PyTorch-GANSER) | [Paper](https://arxiv.org/abs/2109.03124) | [Download](https://pan.baidu.com/s/1olReEiHvWNz-F_wQyYnnWA)
 This is the official implementation of the paper "GANSER: A Self-supervised Data Augmentation Framework for EEG-based Emotion Recognition". NOTE: We are refactoring this project to the best practice of engineering.
 
 ## Roadmap
