@@ -1,30 +1,20 @@
 # GANSER - Official PyTorch Implementation
-#### [Project Page](https://github.com/tczhangzhi/PyTorch-GANSER) | [Paper](https://arxiv.org/abs/2109.03124) | [Download](https://pan.baidu.com/s/1olReEiHvWNz-F_wQyYnnWA)
-This is the official implementation of the paper "GANSER: A Self-supervised Data Augmentation Framework for EEG-based Emotion Recognition". NOTE: We are refactoring this project to the best practice of engineering.
+#### [Project Page](https://github.com/tczhangzhi/PyTorch-GANSER) | [Paper](https://arxiv.org/abs/2109.03124) |
+This is the official implementation of the paper "GANSER: A Self-supervised Data Augmentation Framework for EEG-based Emotion Recognition". NOTE: For privacy reasons, we have removed pre-processed data.
 
 ## Roadmap
 In order to help reviewers to reproduce the experimental results of this paper easily, we will open-source our study following this roadmap:
 
 - [x] open-source all the experimental logs and notebooks for reported comparison experiments, ablation studies, and visualization experiments.
 - [x] refactor the main training and evaluation scripts, trained  parameter files, and documents for out-of-box evaluation.
-- [ ] refactor the temporary process-oriented DREAMER dataset preprocessors and related training codes.
 
 ## Quick Start
 
 #### Dataset and Pre-processing
 
-Usually, you need to download the DEAP dataset and run the whole pre-processing codes to start with an EEG-based emotion recognition project. In this project, we provide a packaged tool called preprocessors, allowing you to pre-process the DEAP dataset and cache the results on the disk, and use them without changing a single line of codes.
+Please download the [DEAP](https://www.eecs.qmul.ac.uk/mmv/datasets/deap/) dataset [1], and modify the path to the downloaded DEAP dataset `DATASET_FOLD_DIR` in `train_proposed_pretrain.py` and `finetune_proposed_pretrain.py`. The `preprocessors` would automatically generate the cache to `./dataset`. For the next time when you need to use these pre-processed results, the preprocessors will automatically load them from locally cached files.
 
-Here, we highly recommend you download all cached files from [here](https://pan.baidu.com/s/1olReEiHvWNz-F_wQyYnnWA) (password: rqdc) and place them in the `./dataset` fold and uncompress them:
-
-```
-cat deap_binary_valence_dataset.tar.bz2.* > deap_binary_valence_dataset.tar.gz
-tar -zxvf deap_binary_valence_dataset.tar.gz
-```
-
-And in this way, you do not need to download the DEAP dataset yourself.
-
-Otherwise, if you already downloaded the DEAP dataset, you can modify the path of the DEAP dataset `DATASET_FOLD_DIR` in `train_proposed_pretrain.py` and `finetune_proposed_pretrain.py`, and then the `preprocessors` would automatically generate the cache to `./dataset`. For the next time when you need to use these pre-processed results, the preprocessors will automatically load them from cached files.
+[1] S. Koelstra, C. Muhl, M. Soleymani, J.-S. Lee, A. Yazdani, T. Ebrahimi, T. Pun, A. Nijholt, and I. Patras, “DEAP: A database for emotion analysis; using physiological signals,” *IEEE Transactions on Affective Computing*, vol. 3, no. 1, pp. 18–31, 2011.
 
 #### Train the proposed GAN
 
